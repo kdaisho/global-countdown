@@ -58,12 +58,7 @@ Countdown.prototype.drawTime = function(element, endtime, type) {
 		minutes = ('0' + end.m).slice(-2);
 		seconds = ('0' + end.s).slice(-2);
 
-		element.innerHTML = `
-			<span class="days">${days} ${self.getUnit(days, self.unit.dayUnit)}</span> 
-			<span class="hours">${hours} ${self.getUnit(hours, self.unit.hourUnit)}</span> 
-			<span class="minutes">${minutes} ${self.getUnit(minutes, self.unit.minUnit)}</span>
-			<span class="seconds">${seconds} ${self.getUnit(seconds, self.unit.secUnit)}</span>
-		`;
+		element.innerHTML = '<span class="days">' + days + self.getUnit(days, self.unit.dayUnit) + '</span> <span class="hours">' + hours + self.getUnit(hours, self.unit.hourUnit) + '</span><span class="minutes">' + minutes + self.getUnit(minutes, self.unit.minUnit) + '</span> <span class="seconds">' + seconds + self.getUnit(seconds, self.unit.secUnit) + '</span>';
 
 		if (remain <= 1000) {
 			clearInterval(count);
