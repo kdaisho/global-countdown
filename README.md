@@ -40,10 +40,13 @@ These configurations are necessary to use countdown timer, pass them to Countdow
 | *secUnit | Unit for seconds |
 
 *Accepts an array: [plural, singular] or a string: 'D'
+
+Set flex units that display plural and singular depending on remaining time.
 ````javascript
 dayUnit: ['days', 'day']
 ````
-or
+
+Set fixed unit regardless of remaining time.
 ````javascript
 dayUnit: 'D'
 ````
