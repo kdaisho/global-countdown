@@ -2,17 +2,17 @@
 JS Countdown timer allows you to implement countdown timer that ends at the same time regardless of time zones without using any server side language. Countdown relies on client's system time to calculate remaining time so it doesn't calculate remaining time correctly if client's system time was set inccorect. Having said that, if you imagine how many of devices connect to internet today have wrong time, you can tell the chances are small enough to ignore.
 
 ## Installation
-You can clone countdown.js (or countdown.min.js) then reference it in html.
+You can clone countdown.min.js (or countdown.js) then reference it in html.
 
 ````html
-<script src="countdown.js"></script>
+<script src="countdown.min.js"></script>
 ````
 
 ## Getting Started
 In order to use countdown timer, instantiate Countdown constructor with your configurations, after referencing script tag.
 
 ````html
-<script src="countdown.js"></script>
+<script src="countdown.min.js"></script>
 <script>
 new Countdown({
 	elementId: 'timer',
@@ -64,7 +64,7 @@ dayUnit: 'D'
 <div>
     <div id="timer"></div>
 </div>
-<script src="countdown.js"></script>
+<script src="countdown.min.js"></script>
 <script>
 new Countdown({
     elementId: 'timer',
