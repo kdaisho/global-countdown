@@ -50,15 +50,32 @@ Set fixed unit regardless of remaining time.
 ````javascript
 dayUnit: 'D'
 ````
-## Example
-````javascript
+## HTML Example
+````html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS Countdown</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div>
+    <div id="timer"></div>
+</div>
+<script src="countdown.js"></script>
+<script>
 new Countdown({
-	elementId: 'timer',
-	deadline: 'Tue, 1 Jan 2019 00:00:00',
-	timeZone: 'GMT-05:00',
-	dayUnit: ['days', 'day'],
-	hourUnit: ['hours', 'hour'],
-	minUnit: ['minutes', 'minute'],
-	secUnit: ['seconds', 'second']
+    elementId: 'timer',
+    deadline: 'Sat, 24 Feb 2018 10:18:30',
+    timeZone: 'GMT-05:00',
+    dayUnit: ['days', 'day'], //or 'D'
+    hourUnit: ['hours', 'hour'],
+    minUnit: ['minutes', 'minute'],
+    secUnit: ['seconds', 'second']
 });
+</script>
+</body>
+</html>
 ````
