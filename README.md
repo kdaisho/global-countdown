@@ -28,13 +28,7 @@ new Countdown({
 
 ## Configurations
 These configurations are necessary to use countdown timer, pass them to Countdown constructor when it instantiates.
-elementId: 'timer',
-	deadline: 'Tue, 1 Jan 2019 00:00:00',
-	timeZone: 'GMT-05:00',
-	dayUnit: ['days', 'day'],
-	hourUnit: ['hours', 'hour'],
-	minUnit: ['minutes', 'minute'],
-	secUnit: ['seconds', 'second']
+
 | property | value |
 | -------- | ----- |
 | elementId | ID of html element that contains countdown timer|
