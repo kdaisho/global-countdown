@@ -25,3 +25,9 @@ new Countdown({
 });
 </script>
 ````
+
+## Configurations
+These configurations are necessary to use countdown timer, pass them to Countdown constructor when it instantiates.
+
+| property | value |
+| -------- | ----- |
