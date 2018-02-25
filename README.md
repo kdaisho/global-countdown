@@ -39,7 +39,7 @@ These configurations are necessary to use countdown timer. Pass them to Countdow
 | minUnit | Unit for minutes* |
 | secUnit | Unit for seconds* |
 
-#### *Accepts an array: [plural, singular] or a string: 'D'
+#### *Accepts an array: [plural, singular] or a string
 
 Set flex units that display plural and singular depending on remaining time.
 ````javascript
