@@ -1,5 +1,5 @@
 # JavaScript Countdown Timer
-JS Countdown timer allows you to implement countdown timer in your websites without using any server side languages. This set of functions relies on client's system time to caluclate remaining time therefore if clent's system time was set incorrect, countdown timer doesn't calculate remaining time correctly. But how many of devices connect to internet today have wrong time? Numbers are small enough to ignore.
+JS Countdown timer allows you to implement countdown timer that ends at the same time regardless of time zones without using any server side language. Countdown relies on client's system time to calculate remaining time so it doesn't calculate remaining time correctly if client's system time was set inccorect. Having said that, if you imagine how many of devices connect to internet today have wrong time, you can tell the chances are small enough to ignore.
 
 ## Installation
 You can clone countdown.js (or countdown.min.js) then reference it in html.
@@ -32,9 +32,30 @@ These configurations are necessary to use countdown timer, pass them to Countdow
 | property | value |
 | -------- | ----- |
 | elementId | ID of html element that contains countdown timer|
-| deadline | End time (e.g. 'Tue, 1 Jan 2019 00:00:00') |
-| timeZone | Your regions' GMT offset (e.g. 'GMT-05:00') |
-| dayUnit | Unit for days |
-| hourUnit | Unit for hours |
-| minUnit | Unit for minutes |
-| secUnit | Unit for seconds |
+| deadline | End time |
+| timeZone | Your region's GMT offset: https://greenwichmeantime.com/time-zone/world/ |
+| *dayUnit | Unit for days |
+| *hourUnit | Unit for hours |
+| *minUnit | Unit for minutes |
+| *secUnit | Unit for seconds |
+
+*Accepts an array: [plural, singular] or a string: 'D'
+````javascript
+dayUnit: ['days', 'day']
+````
+or
+````javascript
+dayUnit: 'D'
+````
+## Example
+````javascript
+new Countdown({
+	elementId: 'timer',
+	deadline: 'Tue, 1 Jan 2019 00:00:00',
+	timeZone: 'GMT-05:00',
+	dayUnit: ['days', 'day'],
+	hourUnit: ['hours', 'hour'],
+	minUnit: ['minutes', 'minute'],
+	secUnit: ['seconds', 'second']
+});
+````
