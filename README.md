@@ -9,7 +9,7 @@ You can clone countdown.min.js (or countdown.js) then reference it in html.
 ````
 
 ## Getting Started
-In order to use countdown timer, instantiate Countdown constructor with your configurations, after referencing script tag.
+In order to use countdown timer, instantiate Countdown constructor with your configurations.
 
 ````html
 <script src="countdown.min.js"></script>
@@ -27,19 +27,19 @@ new Countdown({
 ````
 
 ## Configurations
-These configurations are necessary to use countdown timer, pass them to Countdown constructor when it instantiates.
+These configurations are necessary to use countdown timer. Pass them to Countdown constructor when it instantiates.
 
-| property | value |
+| key | value |
 | -------- | ----- |
-| elementId | ID of html element that contains countdown timer|
+| elementId | ID of html element contains countdown timer|
 | deadline | End time |
 | timeZone | Your region's GMT offset: https://greenwichmeantime.com/time-zone/world/ |
-| *dayUnit | Unit for days |
-| *hourUnit | Unit for hours |
-| *minUnit | Unit for minutes |
-| *secUnit | Unit for seconds |
+| dayUnit | Unit for days* |
+| hourUnit | Unit for hours* |
+| minUnit | Unit for minutes* |
+| secUnit | Unit for seconds* |
 
-*Accepts an array: [plural, singular] or a string: 'D'
+#### *Accepts an array: [plural, singular] or a string: 'D'
 
 Set flex units that display plural and singular depending on remaining time.
 ````javascript
