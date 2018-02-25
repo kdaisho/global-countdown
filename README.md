@@ -68,7 +68,7 @@ dayUnit: 'D'
 <script>
 new Countdown({
     elementId: 'timer',
-    deadline: 'Sat, 24 Feb 2018 10:18:30',
+    deadline: 'Tue, 1 Jan 2019 00:00:00',
     timeZone: 'GMT-05:00',
     dayUnit: ['days', 'day'], //or 'D'
     hourUnit: ['hours', 'hour'],

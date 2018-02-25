@@ -53,7 +53,7 @@ Countdown.prototype.drawTime = function(element, endtime, type) {
 	function setTime() {
 		end = self.updateTime(endtime);
 		remain = end.t;
-		days = ('0' + end.d).slice(-2);
+		days = ('0' + end.d).slice(-3);
 		hours = ('0' + end.h).slice(-2);
 		minutes = ('0' + end.m).slice(-2);
 		seconds = ('0' + end.s).slice(-2);
