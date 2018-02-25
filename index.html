@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Global Countdown</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div id="countdown_timer" class="container">
+	<div class="text-gp">
+		<h2 class="text">This will end in&nbsp;</h2>
+	</div>
+	<div class="timer-gp">
+		<div id="timer"></div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<script src="countdown.js"></script>
+<script>
+new Countdown({
+	elementId: 'timer',
+	deadline: 'Sat, 24 Feb 2018 10:18:30',
+	timeZone: 'GMT-05:00',
+	dayUnit: ['days', 'day'], //set an array or a string
+	hourUnit: ['hours', 'hour'],
+	minUnit: ['minutes', 'minute'],
+	secUnit: ['seconds', 'second']
+});
+</script>
+
+
+</body>
+
+</html>
