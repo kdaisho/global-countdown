@@ -14,13 +14,20 @@ function Countdown(config) {
 	};
 
 	this.unit = {
-		dayUnit: config.dayUnit,
-		hourUnit: config.hourUnit,
-		minUnit: config.minUnit,
-		secUnit: config.secUnit
+		dayUnit: config.units[0],
+		hourUnit: config.units[1],
+		minUnit: config.units[2],
+		secUnit: config.units[3]
 	};
 
-	this.drawTime(this.element, this.deadline, this.type);
+	this.display = [
+		config.hide[0],
+		config.hide[1],
+		config.hide[2],
+		config.hide[3]
+	];
+
+	this.drawTime(this.element, this.deadline);
 }
 
 Countdown.prototype.updateTime = function(endtime) {
@@ -29,6 +36,19 @@ Countdown.prototype.updateTime = function(endtime) {
 	this.time.minutes = Math.floor((this.time.total / 1000 / 60) % 60);
 	this.time.hours = Math.floor((this.time.total / (1000 * 60 * 60)) % 24);
 	this.time.days = Math.floor(this.time.total / (1000 * 60 * 60 * 24));
+
+	if (this.display[0]) {
+		this.time.hours = Math.floor((this.time.total / (1000 * 60 * 60)));
+	}
+	if (this.display[1]) {
+		this.time.minutes = Math.floor((this.time.total / 1000 / 60));
+	}
+	if (this.display[2]) {
+		this.time.seconds = Math.floor((this.time.total / 1000) % 60);
+	}
+	if (this.display[0] && this.display[1] && this.display[2]) {
+		this.time.seconds = Math.floor((this.time.total / 1000));
+	}
 
 	return {
 		t: this.time.total,
@@ -39,47 +59,49 @@ Countdown.prototype.updateTime = function(endtime) {
 	};
 };
 
-Countdown.prototype.drawTime = function(element, endtime, type) {
+Countdown.prototype.drawTime = function(element, endtime) {
 	var count,
-		end,
 		remain,
+		end,
 		days,
 		hours,
 		minutes,
-		seconds;
+		seconds,
+		endArray = [],
+		elementArray = [];
 
 	var self = this;
 
+	setTime();
+	count = setInterval(setTime, 1000);
+
 	function setTime() {
 		end = self.updateTime(endtime);
+		endArray = [end.d, end.h, end.m, end.s];
 		remain = end.t;
-		days = ('0' + end.d).slice(-3);
-		hours = ('0' + end.h).slice(-2);
-		minutes = ('0' + end.m).slice(-2);
-		seconds = ('0' + end.s).slice(-2);
 
-		element.innerHTML = '<span class="days">' + days + self.getUnit(days, self.unit.dayUnit) + '</span> <span class="hours">' + hours + self.getUnit(hours, self.unit.hourUnit) + '</span><span class="minutes">' + minutes + self.getUnit(minutes, self.unit.minUnit) + '</span> <span class="seconds">' + seconds + self.getUnit(seconds, self.unit.secUnit) + '</span>';
+		//Prepend zero when remaining time gets lower than 10
+		for (var i = 0; i < endArray.length; i++) {
+			endArray[i] = endArray[i] < 10 ? '0' + endArray[i] : endArray[i];
+		}
+
+		elementArray = [
+			'<span class="days">' + endArray[0] + '<span class="days-unit">' + self.unit.dayUnit + '</span></span>',
+			'<span class="hours">' + endArray[1] + '<span class="hours-unit">' + self.unit.hourUnit + '</span></span>',
+			'<span class="minutes">' + endArray[2] + '<span class="minutes-unit">' + self.unit.minUnit + '</span></span>',
+			'<span class="seconds">' + endArray[3] + '<span class="seconds-unit">' + self.unit.secUnit + '</span></span>'
+		];
+
+		for (var i = 0, html = ''; i < self.display.length; i++) {
+			if (!self.display[i]) {
+				html += elementArray[i];
+			}
+		}
+		element.innerHTML = html;
 
 		if (remain <= 1000) {
+			console.log('timer ends');
 			clearInterval(count);
 		}
-	}
-
-	setTime();
-
-	count = setInterval(setTime, 1000);
-};	
-
-Countdown.prototype.getUnit = function(timeLeft, unit) {
-	//When singule unit is only set: 'D', return as it is
-	if (unit.length <= 1) return unit;
-
-	//If both plural and singular units are set as an array: ['days', 'day'],
-	//return single unit when remaining time is less than 1
-	if (unit.length >= 2 && timeLeft <= 1) {
-		return unit[1]
-	}
-	else {
-		return unit[0];
 	}
 };

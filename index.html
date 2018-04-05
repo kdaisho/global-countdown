@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+learle<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
 <body>
 <div id="countdown_timer" class="container">
 	<div class="text-gp">
-		<h2 class="text">This wiall end in&nbsp;</h2>
+		<h2 class="text">This ends in&nbsp;</h2>
 	</div>
 	<div class="timer-gp">
 		<div id="timer"></div>
@@ -19,16 +19,17 @@
 	<div class="clearfix"></div>
 </div>
 
-<script src="countdown.min.js"></script>
+<!-- <script src="countdown.min.js"></script> -->
+<script src="countdown.js"></script>
 <script>
 new Countdown({
 	elementId: 'timer',
 	deadline: 'Tue, 1 Jan 2019 00:00:00',
-	timeZone: 'GMT-05:00',
-	dayUnit: ['days', 'day'], //set an array or a string
-	hourUnit: ['hours', 'hour'],
-	minUnit: ['minutes', 'minute'],
-	secUnit: ['seconds', 'second']
+	// deadline: 'Fri, 5 Apr 2018 20:00:00',
+	// deadline: 'Fri, 15 Apr 2018 19:55:20',
+	timeZone: 'GMT-04:00',
+	units: ['d', 'h', 'm', 's'],
+	hide: [false, false, false, false]
 });
 </script>
 
