@@ -1,15 +1,15 @@
 # JavaScript Countdown Timer
-JS Countdown timer allows you to implement countdown timer that displays the same remaining time in different time zones. As this is done by only JavaScript and no server side language involved, usage is quite easy. But due to nature of the language, JS Countdown relies on client's system time to calculate remaining time and that means this doesn't function properly if client's system time was set inccorect. Having said that, if you imagine how many of devices connect to internet today have wrong time, you can tell the chances are small enough to ignore.
+JavaScript Countdown timer allows you to implement a countdown in your web site. It displays the same remaining time everywhere even in different time zones. As this is done by only JavaScript and no server side language are involved, usage is quite easy. However due to nature of the language, JS Countdown relies on client's system time to calculate remaining time. This means it doesn't function properly if client's system time was set inccorect. But having said that, if you imagine how many of devices connect to internet today could keep wrong hours, you can tell the chances are small enough to be ignored.
 
 ## Installation
-You can clone countdown.min.js (or countdown.js) then reference it in html.
+You can clone countdown.min.js (or countdown.js) in dist/js folder then reference it in html.
 
 ````html
 <script src="countdown.min.js"></script>
 ````
 
 ## Getting Started
-In order to use countdown timer, instantiate Countdown constructor with your configurations.
+In order to use countdown timer, instantiate Countdown constructor with desired configurations.
 
 ````html
 <script src="countdown.min.js"></script>
@@ -17,40 +17,48 @@ In order to use countdown timer, instantiate Countdown constructor with your con
 new Countdown({
 	elementId: 'timer',
 	deadline: 'Tue, 1 Jan 2019 00:00:00',
-	timeZone: 'GMT-05:00',
-	dayUnit: ['days', 'day'],
-	hourUnit: ['hours', 'hour'],
-	minUnit: ['minutes', 'minute'],
-	secUnit: ['seconds', 'second']
+	timeZone: 'GMT-04:00',
+	units: ['d', 'h', 'm', 's'],
+	hide: [false, false, false, false]
 });
 </script>
 ````
 
 ## Configurations
-These configurations are necessary to use countdown timer. Pass them to Countdown constructor when it instantiates.
+These configurations are necessary to be set to use countdown. Pass them as parameters to Countdown constructor when it instantiates.
 
-| key | value |
-| -------- | ----- |
-| elementId | ID of html element contains countdown timer|
-| deadline | End time |
-| timeZone | Your region's GMT offset: https://greenwichmeantime.com/time-zone/world/ |
-| dayUnit | Unit for days* |
-| hourUnit | Unit for hours* |
-| minUnit | Unit for minutes* |
-| secUnit | Unit for seconds* |
+| key | type | value |
+| -------- | ----- | ----- |
+| elementId | string | ID of html element contains countdown timer|
+| deadline | string |  End time |
+| timeZone: | string | Your region's GMT offset: https://greenwichmeantime.com/time-zone/world/ |
+| units | array | Unit for days, hours, minutes and second (order matters)|
+| hide | array | Display status for days, hours, mintes and second (order matters)|
 
-#### *Accepts an array: [plural, singular] or a string
+## Output
+````html
+<script>
+new Countdown({
+	elementId: 'timer',
+	deadline: 'Tue, 1 Jan 2019 00:00:00',
+	timeZone: 'GMT-04:00',
+	units: ['d', 'h', 'm', 's'],
+	hide: [false, false, false, false]
+});
+</script>
+````
+Instantiation Countdown in your html file generates a set of html (shown below) and inserts them into the html tag which has id attribute 'timer' as defined above.
 
-Set flex units that display plural and singular depending on remaining time.
-````javascript
-dayUnit: ['days', 'day']
+You can use built-in class names for styling.
+
+````html
+<span class="days">268<span class="days-unit">d</span></span>
+<span class="hours">05<span class="hours-unit">h</span></span>
+<span class="minutes">37<span class="minutes-unit">m</span></span>
+<span class="seconds">43<span class="seconds-unit">s</span></span>
 ````
 
-Set fixed unit regardless of remaining time.
-````javascript
-dayUnit: 'D'
-````
-## HTML Example
+## Usage Example
 ````html
 <!DOCTYPE html>
 <html lang="en">
@@ -67,13 +75,11 @@ dayUnit: 'D'
 <script src="countdown.min.js"></script>
 <script>
 new Countdown({
-    elementId: 'timer',
-    deadline: 'Tue, 1 Jan 2019 00:00:00',
-    timeZone: 'GMT-05:00',
-    dayUnit: ['days', 'day'], //or 'D'
-    hourUnit: ['hours', 'hour'],
-    minUnit: ['minutes', 'minute'],
-    secUnit: ['seconds', 'second']
+	elementId: 'timer',
+	deadline: 'Tue, 1 Jan 2019 00:00:00',
+	timeZone: 'GMT-04:00',
+	units: ['d', 'h', 'm', 's'],
+	hide: [true, false, false, false]
 });
 </script>
 </body>
