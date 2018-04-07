@@ -1,0 +1,38 @@
+html,
+body {
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+body {
+  background: #000;
+}
+.clearfix {
+  clear: both;
+}
+.container {
+  background: #666;
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: center;
+  width: 100%;
+}
+.text-gp,
+.timer-gp {
+  display: inline-block;
+  padding: 12px 0;
+}
+h2,
+span {
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: "Helvetica", "Arial", sans-serif;
+  letter-spacing: 2px;
+  margin: 0;
+}
+span {
+  display: inline-block;
+  margin: 0 4px;
+}
