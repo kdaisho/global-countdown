@@ -1,8 +1,8 @@
 # JavaScript Countdown Timer
-JavaScript Countdown timer allows you to implement a countdown in your web site. It displays the same remaining time everywhere even in different time zones. As this is done by only JavaScript and no server side language are involved, usage is quite easy. However due to nature of the language, JS Countdown relies on client's system time to calculate remaining time. This means it doesn't function properly if client's system time was set inccorect. But having said that, if you imagine how many of devices connect to internet today could keep wrong hours, you can tell the chances are small enough to be ignored.
+JavaScript Countdown timer allows you to implement a countdown widget in your website. It displays the same remaining time everywhere even in different time zones. As this is done by JavaScript only and no server side language are involved, implementation is quite easy. However due to nature of the language, JavaScript Countdown has to rely on client's system time to calculate remaining time. This means it doesn't function properly if client's system time was set incorrect. Having said that, imagine how many devices being connected to internet at all time could keep wrong hours, you'll agree the chances are small enough to be ignored. JavaScript Countdown has been used by one of the largest Canadian apparel company more than 18 months. (as of May, 2018)
 
 ## Installation
-You can clone countdown.min.js (or countdown.js) in dist/js folder then reference it in html.
+You can clone or download the repository. Reference dist/js/countdown.js (or countdown.min.js) in your html.
 
 ````html
 <script src="countdown.min.js"></script>
