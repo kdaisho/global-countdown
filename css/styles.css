@@ -13,8 +13,8 @@ body {
   clear: both;
 }
 .container {
-  background: #666;
-  margin: 0 auto;
+  border-bottom: 6px solid red;
+  margin: 100px auto 0;
   max-width: 960px;
   text-align: center;
   width: 100%;
@@ -23,6 +23,12 @@ body {
 .timer-gp {
   display: inline-block;
   padding: 12px 0;
+}
+.text-gp .days,
+.timer-gp .days,
+.text-gp .hours,
+.timer-gp .hours {
+  font-size: 60px;
 }
 h2,
 span {
