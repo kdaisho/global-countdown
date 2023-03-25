@@ -1,26 +1,26 @@
 {
-	"name": "countdown",
-	"version": "1.0.0",
-	"description": "JavaScript countdown timer",
-	"main": "index.html",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/kdaisho/Countdown.git"
-	},
-	"author": "",
-	"license": "MIT",
-	"homepage": "",
-	"devDependencies": {
-		"gulp-livereload": "^3.8.1",
-		"gulp-sass": "^2.3.1",
-		"gulp-sourcemaps": "^2.0.0-alpha",
-		"gulp-rename": "^1.2.2",
-		"gulp-uglify": "^1.5.3"
-	},
-	"dependencies": {
-		"npm": "^6.1.0"
-	}
+  "name": "countdown",
+  "version": "1.0.0",
+  "description": "JavaScript countdown timer",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdaisho/global-countdown.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3"
+  },
+  "dependencies": {
+    "npm": "^6.1.0"
+  }
 }
